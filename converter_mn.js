@@ -57,7 +57,7 @@ function toWords(num) {
   if ((num = num.toString()).length > 15) return "Хэтэрхий их тоо байна";
 
   n = ("000000000000000" + num)
-    .substr(-15)
+    .slice(-15)
     .match(
       /^(\d{1})(\d{2})(\d{1})(\d{2})(\d{1})(\d{2})(\d{1})(\d{2})(\d{1})(\d{2})$/
     );
