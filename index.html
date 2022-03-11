@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТООГ ҮСЭГ БОЛГОГЧ</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="converter">
+      <header>Тоог үсэг болгон хөрвүүлэгч</header>
+      <input class="inputBox" type="text" placeholder="Тоогоо энд оруулна уу...">
+      <button class="convertBtn">Хөрвүүлэх товч</button>
+    </div>
+    <div class="outputBox">
+      <p>Үр дүн: <span class="result"></span></p>
+    </div>
+  </div>
+  <div class="emptyBox">Хөрвүүлэх боломжтой тоо оруулна уу...</div>
+
+  <script>
+    let inputBox = document.querySelector('.inputBox');
+    let convertBtn = document.querySelector('.convertBtn');
+    let outputBox = document.querySelector('.outputBox');
+    let result = document.querySelector('.result');
+    let emptyBox = document.querySelector('.emptyBox');
+    convertBtn.addEventListener('click', () => {
+      if (inputBox.value === '') {
+        emptyBox.classList.add('active');
+        outputBox.style.display = 'none';
+      } else {
+        emptyBox.classList.remove('active');
+        outputBox.style.display = 'block';
+      }
+      result.innerText = toWords(inputBox.value);
+    });
+  </script>
+
+</body>
+
+</html>
