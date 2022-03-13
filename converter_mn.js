@@ -117,5 +117,5 @@ function toWords(num) {
         ? d[n[10][0]]
         : "";
 
-  return str.charAt(0).toUpperCase() + str.slice(1) + ".";
+  return str.charAt(0).toUpperCase() + str.trim().slice(1) + ".";
 }
